@@ -12,6 +12,7 @@ var testdata = []string{
 	</svg>`,
 	`<svg>
 		<circle cx="50" cy="40" r="30" stroke="#000000"></circle>
+		<rect x="10" y="20.54" width="30" height="40" fill="#00ff00"></rect>
 	</svg>`,
 }
 
@@ -21,6 +22,6 @@ func TestUnmarshal(t *testing.T) {
 		if err := xml.Unmarshal([]byte(td), &svg); err != nil {
 			t.Errorf("unexpected err: %s", err)
 		}
-		fmt.Printf("svg: %+v\n", svg)
+		fmt.Printf("svg: %#v\n", svg)
 	}
 }
